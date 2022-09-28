@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import './App.css';
 import BackgroundData from './components/Cards/BackgroundData';
+import BackgroundVideo from './components/BackgroundVideo/BackgroundVideo.jsx';
 import { SearchBar } from './components/SearchBar';
 import useFetch from './hooks/customFetch/useFetch';
 import weatherContext from './provider/WeatherContext';
@@ -20,10 +21,12 @@ function App() {
     setDataCity(cityData.data);
   }, [cityData]);
 
+  console.log(cityData.data);
   return (
     <>
-    <SearchBar citiesData={citiesData} places={places} cityClima={cityClima} />
-    <BackgroundData {...dataCity} />
+      <BackgroundData {...dataCity} />
+      <BackgroundVideo />
+      <SearchBar citiesData={citiesData} places={places} />
     </>
   );
 }
