@@ -24,9 +24,9 @@ function App() {
   console.log(cityData.data);
   return (
     <>
-      <BackgroundData {...dataCity} />
-      <BackgroundVideo />
+      {/* <BackgroundVideo /> */}
       <SearchBar citiesData={citiesData} places={places} />
+      <BackgroundData {...dataCity} />
     </>
   );
 }
