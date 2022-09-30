@@ -4,7 +4,7 @@ const weatherContext = createContext();
 
 export const WeatherProvider = ({ children }) => {
   const [list, setList] = useState('');
-  const [cityName, setCityName] = useState('');
+  const [cityName, setCityName] = useState('paris');
   const [places, setPlaces] = useState();
   const [clima, setClima] = useState('Tucuman');
 
