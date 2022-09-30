@@ -2,7 +2,6 @@ import React from 'react';
 import './estilo.css';
 
 const BackgroundData = ({ current, location }) => {
-  console.log(current, location);
   return (
     <>
       <div className='row'>
