@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import weatherContext from '../../provider/WeatherContext';
+import './style.css';
 
 const SearchBar = ({ citiesData, places }) => {
   const { setList, setPlaces, setCityName } = useContext(weatherContext);
@@ -11,7 +12,7 @@ const SearchBar = ({ citiesData, places }) => {
   };
 
   return (
-    <section>
+    <section className='searchSection'>
       <div className='d-flex w-25'>
         <input onChange={handleChange} type="text" className="form-control w-50" id="exampleInputText" aria-describedby="textHelp" />
         <button onClick={setDataFound} className='btn btn-primary'>Buscar</button>

@@ -32,7 +32,9 @@
       "warn",
       { "devDependencies": ["**/*.stories.js", "**/*.spec.js"] }
     ],
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "import/no-dynamic-require":"off",
+    "ignoreDestructuring": true 
   },
   "ignorePatterns": ["dist/", "node_modules/", "storybook-static/"],
   "env": {
