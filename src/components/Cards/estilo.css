@@ -5,7 +5,10 @@ body {
     background-color: #CFD8DC;
     background-repeat: no-repeat;
 }
-
+.data-background{
+    position: relative;
+    z-index: 1;    
+}
 .card {
     background-image: url("https://i.imgur.com/dpqZJV5.jpg");
     background-size: cover;
@@ -33,8 +36,8 @@ body {
     font-size: 60px;
 }
 .icon{
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
 
 }
 

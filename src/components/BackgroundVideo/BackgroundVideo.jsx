@@ -4,12 +4,13 @@ import setVideo from '../../helpers/setVideo.jsx';
 import './style.css';
 
 const BackgroundVideo = ({ weatherData }) => {
+  // eslint-disable-next-line camelcase
   const { condition, is_day } = weatherData;
+  // eslint-disable-next-line camelcase
   const { dayTime, weather } = setVideo({ code: condition.code, isDay: is_day });
 
   const videoUrl = `../../assets/videos/${dayTime}/${weather}.mp4`;
 
-  console.log(is_day, weather);
   return (
     <video key={videoUrl} autoPlay muted loop playsInline id='myVideo'>
       <source

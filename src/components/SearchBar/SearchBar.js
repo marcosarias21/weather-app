@@ -3,7 +3,9 @@ import weatherContext from '../../provider/WeatherContext';
 import './style.css';
 
 const SearchBar = ({ citiesData, places }) => {
-  const { setList, setPlaces, setCityName } = useContext(weatherContext);
+  const {
+    setList, setPlaces, setCityName,
+  } = useContext(weatherContext);
   const handleChange = (e) => {
     setList(e.target.value);
   };
@@ -12,17 +14,15 @@ const SearchBar = ({ citiesData, places }) => {
   };
 
   return (
-    <section className='searchSection'>
-      <div className='d-flex w-25'>
+    <section className='searchSection d-flex flex-column'>
+      <div className='d-flex'>
         <input onChange={handleChange} type="text" className="form-control w-50" id="exampleInputText" aria-describedby="textHelp" />
-        <button onClick={setDataFound} className='btn btn-primary'>Buscar</button>
+        <button onClick={setDataFound} className='btn btn-secondary'>Buscar</button>
       </div>
-      <div>
-        <ul>
-          {places?.map(place => (
-            <li key={place.id} className='my-1'><button className='btn btn-primary' onClick={() => setCityName(place.name)}>{place.name}</button></li>
-          ))}
-        </ul>
+      <div className='background-listPlaces-style'>
+        {places?.map(place => (
+          <h5 key={place.id} className='d-flex my-3 list-items btn btn-outline-light' onClick={() => setCityName(place.name)}>{place.name}</h5>
+        ))}
       </div>
     </section>
   );

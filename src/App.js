@@ -8,7 +8,7 @@ import weatherContext from './provider/WeatherContext';
 
 function App() {
   const {
-    list, cityName, places, clima,
+    list, cityName, places, setIsShow, isShow,
   } = useContext(weatherContext);
   const [dataCity, setDataCity] = useState();
 
@@ -17,12 +17,16 @@ function App() {
 
   useEffect(() => {
     setDataCity(cityData.data);
+    if (places) setIsShow(false);
   }, [cityData]);
 
   return (
     <>
-      <SearchBar citiesData={citiesData} places={places} />
-      <BackgroundData {...dataCity} />
+    {cityData.data && <BackgroundVideo weatherData={cityData.data.current}/>}
+    {
+      isShow ? <SearchBar citiesData={citiesData} places={places} />
+        : <BackgroundData {...dataCity} isShow={isShow} />
+    }
     </>
   );
 }

@@ -7,6 +7,7 @@ export const WeatherProvider = ({ children }) => {
   const [cityName, setCityName] = useState('paris');
   const [places, setPlaces] = useState();
   const [clima, setClima] = useState('Tucuman');
+  const [isShow, setIsShow] = useState(true);
 
   const data = {
     list,
@@ -17,6 +18,8 @@ export const WeatherProvider = ({ children }) => {
     setPlaces,
     clima,
     setClima,
+    isShow,
+    setIsShow,
   };
 
   return (
