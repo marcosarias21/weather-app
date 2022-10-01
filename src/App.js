@@ -21,9 +21,8 @@ function App() {
 
   return (
     <>
-      <BackgroundData {...dataCity} />
-      {cityData.data && <BackgroundVideo weatherData={cityData.data.current}/>}
       <SearchBar citiesData={citiesData} places={places} />
+      <BackgroundData {...dataCity} />
     </>
   );
 }
