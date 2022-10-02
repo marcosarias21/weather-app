@@ -1,4 +1,15 @@
 .searchSection{
     z-index: 1;
     position: relative;
+    width: 40%;
+}
+
+.list-items{
+    width: 50%;
+    padding-top: 10px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0px;
+
 }

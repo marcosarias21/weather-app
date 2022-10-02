@@ -34,7 +34,7 @@
     ],
     "import/prefer-default-export": "off",
     "import/no-dynamic-require":"off",
-    "ignoreDestructuring": true 
+    "ignoreDestructuring": 0 
   },
   "ignorePatterns": ["dist/", "node_modules/", "storybook-static/"],
   "env": {
