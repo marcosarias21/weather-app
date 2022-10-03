@@ -38,3 +38,10 @@ body {
 .temp{
     font-size: 5em;
 }
+
+@media (max-width: 760px) {
+    .btn.btn-secondary {
+        width: 18rem !important;
+        margin-left: 0%;
+    }
+}

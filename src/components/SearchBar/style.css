@@ -27,3 +27,16 @@
     font-size:1.2rem;
     width: 60%;
 }
+
+
+@media (max-width: 760px) {
+    .searchSection {
+    width: 100%;
+    }
+}
+@media (max-width: 760px) {
+    #buttons {
+        width: 5rem !important;
+        margin-left: 0%;
+    }
+}
