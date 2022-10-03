@@ -35,8 +35,8 @@
     "import/prefer-default-export": "off",
     "import/no-dynamic-require":"off",
     "ignoreDestructuring": 0,
-    "allowForLoopAfterthoughts": true,
-    "properties": "never"
+    "allowForLoopAfterthoughts": 0,
+    "properties": 0
   },
   "ignorePatterns": ["dist/", "node_modules/", "storybook-static/"],
   "env": {
