@@ -5,6 +5,7 @@ import BackgroundVideo from './components/BackgroundVideo/BackgroundVideo.jsx';
 import { SearchBar } from './components/SearchBar';
 import useFetch from './hooks/customFetch/useFetch';
 import weatherContext from './provider/WeatherContext';
+import { WeeklyForecast } from './components/WeeklyForecast';
 
 function App() {
   const {
@@ -27,6 +28,7 @@ function App() {
       isShow ? <SearchBar citiesData={citiesData} places={places} />
         : <BackgroundData {...dataCity} isShow={isShow} />
     }
+    {cityData.data && <WeeklyForecast locationData={cityData.data.location}/>}
     </>
   );
 }
