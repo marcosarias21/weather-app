@@ -8,16 +8,15 @@ body {
 .data-background{
     position: relative;
     z-index: 1;    
+    margin-top: 10px;
+    margin-left: 30px;
+    color: #fff;
+
 }
-.card {
-    background-image: url("https://i.imgur.com/dpqZJV5.jpg");
-    background-size: cover;
-    width: 600px;
-    height: 350px;
-    border-radius: 20px;
-    box-shadow: 0px 8px 16px 4px #9E9E9E;
-    margin-top: 50px;
-    margin-bottom: 50px;
+.icon {
+    width: 200px;
+    height: 200px;
+    margin-left: 60px;
 }
 
 .time-font {
@@ -35,12 +34,7 @@ body {
 .large-font {
     font-size: 60px;
 }
-.icon{
-    width: 200px;
-    height: 200px;
-
-}
 
 .temp{
-    font-size: 7em;
+    font-size: 5em;
 }
