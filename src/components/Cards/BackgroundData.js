@@ -3,6 +3,10 @@ import weatherContext from '../../provider/WeatherContext';
 import './estilo.css';
 
 const BackgroundData = ({ current, location }) => {
+  if (!current || !location) {
+    return null;
+  }
+  console.log(current, location);
   const { setIsShow } = useContext(weatherContext);
   const backToSearch = () => {
     setIsShow(true);

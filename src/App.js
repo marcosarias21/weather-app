@@ -21,6 +21,7 @@ function App() {
     if (places) setIsShow(false);
   }, [cityData]);
 
+  console.log(dataCity);
   return (
     <>
     {cityData.data && <BackgroundVideo weatherData={cityData.data.current}/>}
