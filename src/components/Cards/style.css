@@ -41,7 +41,7 @@ body {
 
 @media (max-width: 760px) {
     .btn.btn-secondary {
-        width: 18rem !important;
-        margin-left: 0%;
+        width: 20rem !important;
+        margin-left: 40px;
     }
 }

@@ -14,7 +14,7 @@ const WeeklyForecast = ({ locationData }) => {
   }
 
   return (
-    <div className='weekForecast'>{weekData.length && weekData.map((dayInfo, index) => {
+    <div className='weekForecast' id='week'>{weekData.length && weekData.map((dayInfo, index) => {
       return <WeekDay key={index} {...dayInfo}/>;
     })}</div>
   );
