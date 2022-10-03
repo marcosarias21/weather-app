@@ -1,6 +1,7 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable camelcase */
 export const weekDayTemperature = (data) => {
+  console.log(data);
   const weekDayValues = [];
   let dayValues = [[], []];
   let minMaxValues = { minTemp: 0, maxTemp: 0, iconCode: 0 };
