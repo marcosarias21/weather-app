@@ -13,14 +13,14 @@ const WeeklyForecast = ({ locationData }) => {
   let weekData = [];
   if (data) {
     weekData = weekDayTemperature(data);
-    console.log(weekDayTemperature(data));
   }
 
   return (
     <div className='weekForecast' style={{ opacity: style.opacity }}
     >{weekData.length && weekData.map((dayInfo, index) => {
       return <WeekDay key={index} {...dayInfo}/>;
-    })}</div>
+      })}
+    </div>
   );
 };
 

@@ -24,12 +24,13 @@ function App() {
   console.log(dataCity);
   return (
     <>
+    {cityData.data && <WeeklyForecast locationData={cityData.data.location}/>}
     {cityData.data && <BackgroundVideo weatherData={cityData.data.current}/>}
     {
       isShow ? <SearchBar citiesData={citiesData} places={places} />
-        : <BackgroundData {...dataCity} isShow={isShow} />
+        : <BackgroundData {...dataCity} isShow={isShow}
+         />
     }
-    {cityData.data && <WeeklyForecast locationData={cityData.data.location}/>}
     </>
   );
 }
