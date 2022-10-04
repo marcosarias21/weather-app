@@ -7,4 +7,5 @@
     position: absolute;
     bottom: 1rem;
     right: 1rem;
+    transition: 1s;
 }

@@ -1,23 +1,24 @@
 import { createContext, useContext, useState } from 'react';
 
 const styleContext = createContext();
-const styleToggleContext = createContext();
+const styleChangeContext = createContext();
+
+export const StyleProvider = ({ children }) => {
+  const [style, setStyle] = useState({
+    opacity: 1,
+  });
+
+  return (
+      <styleChangeContext.Provider value={setStyle}>
+          <styleContext.Provider value={style}>{children}</styleContext.Provider>
+      </styleChangeContext.Provider>
+  );
+};
 
 export const useStyleContext = () => {
   return useContext(styleContext);
 };
-export const useStyleToggleContext = () => {
-  return useContext(styleToggleContext);
-};
 
-export const StyleProvider = ({ children }) => {
-  const [style, setStyle] = useState({ opacity: 1 });
-
-  return (
-    <styleContext value={style}>
-      <styleToggleContext value={setStyle}>
-        {children}
-      </styleToggleContext>
-    </styleContext>
-  );
+export const useStyleChangeContext = () => {
+  return useContext(styleChangeContext);
 };
