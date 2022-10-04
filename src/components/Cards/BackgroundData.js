@@ -21,7 +21,7 @@ const BackgroundData = ({ current, location }) => {
         <img src={current.condition.icon} className='icon' id='icono' alt='icon' />
         <h3 className='temp d-flex justify-content-center'>{current?.temp_c}°C </h3>
         <div>
-          <h4 className='d-flex justify-content-center mb-5'>{current?.condition?.text}</h4>
+          <h4 className='d-flex justify-content-center mb-3'>{current?.condition?.text}</h4>
           <p>{current?.condition?.text && <h4>Cloud: {current?.cloud} %</h4>}</p>
           <p>{current?.condition?.text && <h4>Humidity: {current?.humidity} %</h4>}</p>
           <p>{current?.condition?.text && <h4>Wind: {current?.wind_kph} km/h</h4>}</p>

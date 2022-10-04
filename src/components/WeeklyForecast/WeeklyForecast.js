@@ -16,9 +16,9 @@ const WeeklyForecast = ({ locationData }) => {
   }
 
   return (
-    <div className='weekForecast' style={{ opacity: style.opacity }}
-    >{weekData.length && weekData.map((dayInfo, index) => {
-      return <WeekDay key={index} {...dayInfo}/>;
+    <div className='weekForecast' style={{ opacity: style.opacity }}>
+      {weekData.length && weekData.map((dayInfo, index) => {
+        return <WeekDay key={index} {...dayInfo}/>;
       })}
     </div>
   );
