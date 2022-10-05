@@ -34,13 +34,14 @@ describe('test data de las cards', () => {
   });
 
   test('Se espera que el componente vuelva a searchbar', () => {
+    const setIsShow = jest.fn();
     render(
-    <WeatherProvider>
+    <WeatherProvider value={setIsShow}>
       <BackgroundData {...dataCity}/>;
     </WeatherProvider>,
     );
     const element = screen.getByText('Volver');
     fireEvent.click(element);
-    expect(element).toBeTruthy();
+    expect(setIsShow).toBeTruthy();
   });
 });

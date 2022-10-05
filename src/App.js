@@ -9,7 +9,7 @@ import { WeeklyForecast } from './components/WeeklyForecast';
 
 function App() {
   const {
-    list, cityName, places, setIsShow, isShow,
+    list, cityName, places, setIsShow, isShow, weekData,
   } = useContext(weatherContext);
   const [dataCity, setDataCity] = useState();
 
@@ -20,11 +20,10 @@ function App() {
     setDataCity(cityData.data);
     if (places) setIsShow(false);
   }, [cityData]);
-
-  console.log(dataCity);
+  console.log(weekData);
   return (
     <>
-    {cityData.data && <WeeklyForecast locationData={cityData.data.location}/>}
+    {cityData.data && <WeeklyForecast locationData={cityData.data.location} weekData={weekData} />}
     {cityData.data && <BackgroundVideo weatherData={cityData.data.current}/>}
     {
       isShow ? <SearchBar citiesData={citiesData} places={places} />
