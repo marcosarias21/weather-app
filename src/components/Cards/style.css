@@ -2,7 +2,6 @@ body {
     color: #fff;
     overflow-x: hidden;
     height: 100%;
-    background-color: #CFD8DC;
     background-repeat: no-repeat;
 }
 .data-background{
@@ -11,11 +10,11 @@ body {
     margin-top: 10px;
     margin-left: 30px;
     color: #fff;
-
+    transition: 1s;
 }
 .icon {
-    width: 200px;
-    height: 200px;
+    width: 170px;
+    height: 170px;
     margin-left: 60px;
 }
 

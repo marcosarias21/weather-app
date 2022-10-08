@@ -1,8 +1,11 @@
 import { useContext } from 'react';
+import { useStyleChangeContext } from '../../provider/styleProviders';
 import weatherContext from '../../provider/WeatherContext';
 import './style.css';
 
 const SearchBar = ({ citiesData, places }) => {
+  const setStyle = useStyleChangeContext();
+
   const {
     setList, setPlaces, setCityName,
   } = useContext(weatherContext);
@@ -11,6 +14,15 @@ const SearchBar = ({ citiesData, places }) => {
   };
   const setDataFound = () => {
     setPlaces(citiesData.data);
+  };
+
+  const clickItem = (name) => {
+    setCityName(name);
+    setStyle({ opacity: 0 });
+
+    setTimeout(() => {
+      setStyle({ opacity: 1 });
+    }, 1000);
   };
 
   return (
@@ -24,7 +36,7 @@ const SearchBar = ({ citiesData, places }) => {
       </div>
       <div className='background-listPlaces-style'>
         {places?.map(place => (
-          <h5 key={place.id} className='d-flex my-3 list-items btn btn-outline-light' onClick={() => setCityName(place.name)}>{place.name}</h5>
+          <h5 key={place.id} className='d-flex my-3 list-items btn btn-outline-light' onClick={() => clickItem(place.name)}>{place.name}</h5>
         ))}
       </div>
     </section>
