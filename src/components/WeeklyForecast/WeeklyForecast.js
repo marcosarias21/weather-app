@@ -6,7 +6,7 @@ import { WeekDay } from '../WeekDay';
 import './style.css';
 
 const WeeklyForecast = ({ locationData, weekData }) => {
-  if (!locationData && !weekData) return null;
+  if (!locationData || !weekData) return null;
   const { setWeekData } = useContext(weatherContext);
   const { lat, lon } = locationData;
   console.log(lat, lon);

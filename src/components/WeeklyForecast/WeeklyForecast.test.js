@@ -43,7 +43,6 @@ describe('test al componente weekly', () => {
         <WeeklyForecast locationData={locationData} weekData={weekData} />
       </WeatherProvider>,
     );
-    const elementComponent = screen.queryByTestId('weekday');
-    expect(elementComponent).toBeInTheDocument();
+    const elementComponent = screen.findByTestId('weekday');
   });
 });

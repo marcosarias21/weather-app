@@ -13,8 +13,8 @@ function App() {
   } = useContext(weatherContext);
   const [dataCity, setDataCity] = useState();
 
-  const citiesData = useFetch(`http://api.weatherapi.com/v1/search.json?key=feb6eb809bb34569b51171058222109&q=${list}`);
-  const cityData = useFetch(`http://api.weatherapi.com/v1/current.json?key=feb6eb809bb34569b51171058222109&q=${cityName}`);
+  const citiesData = useFetch(`http://api.weatherapi.com/v1/search.json?key=08a565689a5d4ba787f04054220810&q=${list}`);
+  const cityData = useFetch(`http://api.weatherapi.com/v1/current.json?key=08a565689a5d4ba787f04054220810&q=${cityName}`);
 
   useEffect(() => {
     setDataCity(cityData.data);
