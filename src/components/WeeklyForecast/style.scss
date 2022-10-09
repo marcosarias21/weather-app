@@ -1,0 +1,27 @@
+.weekForecast{
+    display: flex;
+    justify-content: space-around;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    border-radius: 7px;
+    width: 280px;
+    height: 120px;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+
+@media (max-width: 760px) {
+    .weekForecast {
+        position: absolute;
+        padding: 0rem;
+        width: 280px;
+        height: 120px;
+        display: flex;
+        justify-content: space-around;
+        top: unset;
+        right: unset;
+        bottom: 2rem !important;
+    }
+}

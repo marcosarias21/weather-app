@@ -1,0 +1,13 @@
+body{
+  background-color: #000;
+}
+
+
+
+@media (max-width: 760px) {
+  .forecastContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}

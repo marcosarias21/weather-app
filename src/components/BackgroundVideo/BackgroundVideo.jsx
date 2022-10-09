@@ -1,8 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import setVideo from '../../helpers/setVideo.jsx';
 import { useStyleContext } from '../../provider/styleProviders';
-
-import './style.css';
+import './style.scss';
 
 const BackgroundVideo = ({ weatherData }) => {
   const style = useStyleContext();

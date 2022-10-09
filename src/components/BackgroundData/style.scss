@@ -1,0 +1,50 @@
+body {
+    color: #fff;
+    overflow-x: hidden;
+    height: 100%;
+    background-repeat: no-repeat;
+}
+.data-background{
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 335px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 7px;
+    position: relative;
+    z-index: 1;    
+    margin-top: 10px;
+    margin-left: 30px;
+    color: #fff;
+    transition: 1s;
+    h2{
+        text-align: center;
+    }
+    .temp{
+        font-size: 5em;
+        text-align: center;
+    }
+    .conditionText{
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .icon {
+        width: 170px;
+        height: 170px;
+    }
+}
+
+@media (max-width: 760px) {
+    .btn.btn-secondary {
+        width: 20rem !important;
+        margin-left: 0px !important;
+    }
+    .data-background{
+        margin-top: 0px;
+        margin-left: 0px;
+        width: 100%;
+        border-radius: 0;
+    }
+}

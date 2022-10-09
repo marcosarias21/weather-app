@@ -1,11 +1,14 @@
 import { useContext, useEffect, useState } from 'react';
-import './App.css';
-import BackgroundData from './components/Cards/BackgroundData';
+import './App.scss';
+import BackgroundData from './components/BackgroundData/BackgroundData';
 import BackgroundVideo from './components/BackgroundVideo/BackgroundVideo.jsx';
 import { SearchBar } from './components/SearchBar';
 import useFetch from './hooks/customFetch/useFetch';
 import weatherContext from './provider/WeatherContext';
 import { WeeklyForecast } from './components/WeeklyForecast';
+
+const url = process.env.REACT_APP_BASE_URL;
+const key = process.env.REACT_APP_API_KEY;
 
 function App() {
   const {
@@ -13,24 +16,25 @@ function App() {
   } = useContext(weatherContext);
   const [dataCity, setDataCity] = useState();
 
-  const citiesData = useFetch(`http://api.weatherapi.com/v1/search.json?key=feb6eb809bb34569b51171058222109&q=${list}`);
-  const cityData = useFetch(`http://api.weatherapi.com/v1/current.json?key=feb6eb809bb34569b51171058222109&q=${cityName}`);
+  const citiesData = useFetch(`${url}/search.json?key=${key}&q=${list}`);
+  const cityData = useFetch(`${url}/current.json?key=${key}&q=${cityName}`);
 
   useEffect(() => {
     setDataCity(cityData.data);
     if (places) setIsShow(false);
   }, [cityData]);
 
-  console.log(dataCity);
   return (
     <>
-    {cityData.data && <WeeklyForecast locationData={cityData.data.location}/>}
     {cityData.data && <BackgroundVideo weatherData={cityData.data.current}/>}
     {
       isShow ? <SearchBar citiesData={citiesData} places={places} />
         : <BackgroundData {...dataCity} isShow={isShow}
-         />
+      />
     }
+    <div className="forecastContainer">
+        {cityData.data && <WeeklyForecast locationData={cityData.data.location}/>}
+    </div>
     </>
   );
 }

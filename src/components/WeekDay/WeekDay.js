@@ -1,5 +1,5 @@
 import React from 'react';
-import './style.css';
+import './style.scss';
 
 const WeekDay = ({
   minTemp, maxTemp, iconCode, date,
@@ -11,8 +11,8 @@ const WeekDay = ({
   return (
     <div className='weekDay'>
         <div>
-        <p>{dayName.slice(0, 3)} {date.slice(5, 10)}</p>
-        <p>{Math.round(minTemp)} / {Math.round(maxTemp)}</p>
+            <p>{dayName.slice(0, 3)} {date.slice(5, 10)}</p>
+            <p>{Math.round(minTemp)}° / {Math.round(maxTemp)}°</p>
         </div>
         <img src={`http://openweathermap.org/img/wn/${iconCode.slice(0, 2)}d@2x.png`} className='weekDayIcon' alt='icon' />
     </div>
