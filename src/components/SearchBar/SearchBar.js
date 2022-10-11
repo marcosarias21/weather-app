@@ -1,10 +1,12 @@
 import { useContext } from 'react';
-import { useStyleChangeContext } from '../../provider/styleProviders';
+import { useStyleChangeContext, useStyleContext } from '../../provider/styleProviders';
 import weatherContext from '../../provider/WeatherContext';
 import './style.css';
 
 const SearchBar = ({ citiesData, places }) => {
+  if (!citiesData && !places) return null;
   const setStyle = useStyleChangeContext();
+  const style = useStyleContext();
 
   const {
     setList, setPlaces, setCityName,
@@ -26,7 +28,7 @@ const SearchBar = ({ citiesData, places }) => {
   };
 
   return (
-    <section className='searchSection d-flex flex-column'>
+    <section data-testid='section-searchbar' style={{ opacity: style.opacity }} className='searchSection d-flex flex-column'>
       <div className='d-flex'>
         <input onChange={handleChange}
                type="text"
@@ -36,7 +38,7 @@ const SearchBar = ({ citiesData, places }) => {
       </div>
       <div className='background-listPlaces-style'>
         {places?.map(place => (
-          <h5 key={place.id} className='d-flex my-3 list-items btn btn-outline-light' onClick={() => clickItem(place.name)}>{place.name}</h5>
+          <h5 data-testid='opcion' key={place.id} className='d-flex my-3 list-items btn btn-outline-light' onClick={() => clickItem(place.name)}>{place.name}</h5>
         ))}
       </div>
     </section>
