@@ -1,5 +1,3 @@
-/* eslint-disable no-plusplus */
-/* eslint-disable camelcase */
 export const weekDayTemperature = (data) => {
   console.log(data);
   const weekDayValues = [];

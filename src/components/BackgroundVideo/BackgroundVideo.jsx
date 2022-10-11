@@ -7,9 +7,7 @@ const BackgroundVideo = ({ weatherData }) => {
   if (!weatherData) return null;
   const style = useStyleContext();
 
-  // eslint-disable-next-line camelcase
   const { condition, is_day } = weatherData;
-  // eslint-disable-next-line camelcase
   const { dayTime, weather } = setVideo({ code: condition.code, isDay: is_day });
 
   const videoUrl = `../../assets/videos/${dayTime}/${weather}.mp4`;
