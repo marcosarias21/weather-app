@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { useStyleChangeContext, useStyleContext } from '../../provider/styleProviders';
 import weatherContext from '../../provider/WeatherContext';
-import './style.css';
+import './style.scss';
 
 const SearchBar = ({ citiesData, places }) => {
   if (!citiesData && !places) return null;
@@ -28,15 +28,15 @@ const SearchBar = ({ citiesData, places }) => {
   };
 
   return (
-    <section data-testid='section-searchbar' style={{ opacity: style.opacity }} className='searchSection d-flex flex-column'>
-      <div className='d-flex'>
+    <section data-testid='section-searchbar' style={{ opacity: style.opacity }} className='searchSection'>
+      <div className='searchContainer'>
         <input onChange={handleChange}
                type="text"
-               className="form-control w-60 ml-3 mt-3 mb-3"
+               className="searchInput"
                placeholder='Clima en...' />
         <button onClick={setDataFound} className='btn btn-secondary mt-3 mb-3' id='buttons'>Buscar</button>
       </div>
-      <div className='background-listPlaces-style'>
+      <div className='itemContainer'>
         {places?.map(place => (
           <h5 data-testid='opcion' key={place.id} className='d-flex my-3 list-items btn btn-outline-light' onClick={() => clickItem(place.name)}>{place.name}</h5>
         ))}

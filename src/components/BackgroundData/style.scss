@@ -19,6 +19,10 @@ body {
     margin-left: 30px;
     color: #fff;
     transition: 1s;
+    @media only screen and (max-width: 768px) {
+        padding:0;
+    }
+    
     h2{
         text-align: center;
     }
@@ -33,6 +37,14 @@ body {
     .icon {
         width: 170px;
         height: 170px;
+    }
+    div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        p{
+            font-size: 20px;
+        }
     }
 }
 
