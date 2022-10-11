@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import { StyleProvider } from '../../provider/styleProviders';
 import { WeatherProvider } from '../../provider/WeatherContext';
 import BackgroundData from './BackgroundData';
 
@@ -16,7 +17,9 @@ describe('test data de las cards', () => {
   test('Se espera que renderize el componente', () => {
     render(
     <WeatherProvider>
-      <BackgroundData {...dataCity}/>;
+      <StyleProvider>
+        <BackgroundData {...dataCity}/>;
+      </StyleProvider>
     </WeatherProvider>,
     );
     const element = screen.getByText('Volver');
@@ -25,8 +28,10 @@ describe('test data de las cards', () => {
 
   test('Se espera que renderize la data del componente', () => {
     render(
-    <WeatherProvider>
+    <WeatherProvider >
+      <StyleProvider>
       <BackgroundData {...dataCity} />;
+      </StyleProvider>
     </WeatherProvider>,
     );
     const element = screen.getByText(dataCity.current.condition.text);
@@ -36,7 +41,10 @@ describe('test data de las cards', () => {
   test('Se espera que el componente vuelva a searchbar', () => {
     render(
     <WeatherProvider>
+      <StyleProvider>
       <BackgroundData {...dataCity}/>;
+
+      </StyleProvider>
     </WeatherProvider>,
     );
     const element = screen.getByText('Volver');
