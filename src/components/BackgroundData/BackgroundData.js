@@ -23,9 +23,9 @@ const BackgroundData = ({ current, location }) => {
               <h3 className='temp'>{current?.temp_c}°C </h3>
               <div>
                 <h4 className='conditionText'>{current?.condition?.text}</h4>
-                <h4>Cloud: {current?.cloud} %</h4>
-                <h4>Humidity: {current?.humidity} %</h4>
-                <h4>Wind: {current?.wind_kph} km/h</h4>
+                <p>Cloud: {current?.cloud} %</p>
+                <p>Humidity: {current?.humidity} %</p>
+                <p>Wind: {current?.wind_kph} km/h</p>
               <button className='btn btn-secondary w-100 mt-3' id='button' onClick={() => backToSearch()}> Volver </button>
         </div>
           </>
