@@ -43,7 +43,6 @@ describe('test data de las cards', () => {
     <WeatherProvider>
       <StyleProvider>
       <BackgroundData {...dataCity}/>;
-
       </StyleProvider>
     </WeatherProvider>,
     );

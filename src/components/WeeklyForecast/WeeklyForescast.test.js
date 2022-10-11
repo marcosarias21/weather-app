@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import { StyleProvider } from '../../provider/styleProviders';
 import { WeatherProvider } from '../../provider/WeatherContext';
 import WeeklyForecast from './WeeklyForecast';
 
@@ -29,9 +30,13 @@ describe('test al componente weekly', () => {
   });
 
   test('Se espera que renderize el componente', () => {
-    render(<WeatherProvider>
-            <WeeklyForecast locationData={locationData} weekData={weekData} />
-          </WeatherProvider>);
+    render(
+    <WeatherProvider>
+      <StyleProvider>
+        <WeeklyForecast locationData={locationData} weekData={weekData} />
+      </StyleProvider>
+      </WeatherProvider>,
+    );
     const element = screen.queryByTestId('weeklyId');
     expect(element).toBeInTheDocument();
   });
@@ -40,9 +45,12 @@ describe('test al componente weekly', () => {
     const setWeekData = jest.fn();
     render(
       <WeatherProvider value={setWeekData}>
+      <StyleProvider>
         <WeeklyForecast locationData={locationData} weekData={weekData} />
+      </StyleProvider>
       </WeatherProvider>,
     );
     const elementComponent = screen.findByTestId('weekday');
+    expect(elementComponent).toBeInTheDocument();
   });
 });

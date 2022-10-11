@@ -4,12 +4,13 @@ import './style.scss';
 const WeekDay = ({
   minTemp, maxTemp, iconCode, date,
 }) => {
+  if (!minTemp || !maxTemp || !iconCode || !date) return null;
   const d = new Date(date.slice(0, 10));
   d.setMinutes(d.getMinutes() - d.getTimezoneOffset() - 60000);
 
   const dayName = d.toLocaleString('es', { weekday: 'long' });
   return (
-    <div className='weekDay'>
+    <div className='weekDay' data-testid='id-test'>
         <div>
             <p>{dayName.slice(0, 3)} {date.slice(5, 10)}</p>
             <p>{Math.round(minTemp)}° / {Math.round(maxTemp)}°</p>

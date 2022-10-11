@@ -4,6 +4,7 @@ import { useStyleContext } from '../../provider/styleProviders';
 import './style.scss';
 
 const BackgroundVideo = ({ weatherData }) => {
+  if (!weatherData) return null;
   const style = useStyleContext();
 
   // eslint-disable-next-line camelcase
@@ -14,6 +15,7 @@ const BackgroundVideo = ({ weatherData }) => {
   const videoUrl = `../../assets/videos/${dayTime}/${weather}.mp4`;
   return (
     <video
+    data-testid = 'video-id'
     key={videoUrl}
     autoPlay
     muted loop
