@@ -8,7 +8,7 @@ import weatherContext from './provider/WeatherContext';
 import { WeeklyForecast } from './components/WeeklyForecast';
 
 const url = process.env.REACT_APP_BASE_URL;
-const key = process.env.REACT_APP_API_KEY;
+const key = process.env.REACT_APP_SECRET_KEY;
 
 function App() {
   const {
